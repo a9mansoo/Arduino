@@ -46,7 +46,6 @@ services:
 volumes:
   influxdb-data:
   sensor:
-  grafana-storage:
 
 networks:
   monitor:
