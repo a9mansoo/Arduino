@@ -126,10 +126,17 @@
 </code></pre>
 <p>This setup allows the Arduino to read temperature and humidity data from the sensor, which we can then send to a computer or other devices.</p>
 <h3 id="circuit-setup-image">Circuit Setup Image</h3>
-<p>(<i>Coming Soon!</i>) </p>
+<p>The following image shows the circuit created using the breadboard and Arduino (ignore Donald Duck in the background looking at it with disdain!)</p>
+<p><img src="../assets/images/circuit.jpg" alt="Circuit" width="500" height="300"></p>
+<pre><code>1. The green wire is the data wire, which is attached to D2.
+2. The red wire is the power, connected to the 5V pin of the Arduino.
+3. The black wire is ground, connected to the GND pin of the Arduino.
+</code></pre>
 <h3 id="the-arduino-code">The Arduino Code</h3>
 <p>This can be reviewed from the following <a href="https://github.com/a9mansoo/Arduino/blob/main/Humidity_Temperature_Sensor_DHT11/humidity_temp_sensor.ino">source</a>.</p>
 <p>Pretty simple, import the library and establish what kind of data has to be sent over serial communication (in our case, JSON).</p>
+<p>See the 'JSON' output below through serial output:</p>
+<p><img src="../assets/images/arduino_output.png" alt="Arduino Output"></p>
 <h2 id="the-python">The Python</h2>
 <p>Before diving into the Python code, there was one important question on my mind:</p>
 <ul>
@@ -161,8 +168,10 @@
 <li>File Rotation</li>
 </ul>
 <p>... and the list could go on and on for a self critic like myself :)</p>
-<p>However, I wanted to put together something quickly since I was interested in taking the readings :)</p>
+<p>However, I wanted to put together something quickly since I was interested in taking the readings :) And below we achieved the following (hurray!):</p>
+<p><img src="../assets/images/python_data_logging.png" alt="Sensor File Output"></p>
 <p>See some of the <a href="https://github.com/a9mansoo/Arduino/tree/main/Humidity_Temperature_Sensor_DHT11/app/monitors/monitors">source</a> for some ideas.</p>
+<h3 id="_1"></h3>
 <h2 id="the-docker">The Docker</h2>
 <p>Getting flashbacks from my previous workplace, we were somewhat obsessed with <b>InfluxDB</b> and <b>Telegraf</b>.</p>
 <p>Note that the code in the repository does not consist of environment files. These files contain sensitive information and therefore should be replaced by the user.</p>
