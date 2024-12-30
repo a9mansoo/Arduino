@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arduino-serial-monitor"
+version = "1.0.0"
+description = "A Python package to monitor Arduino sensors and log data."
+requires-python = ">=3.10"
+
+dependencies = [
+    "pyserial>=3.5"
+]
+
+[project.scripts]
+arduino-monitor = "monitor.main:main"
