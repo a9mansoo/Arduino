@@ -10,7 +10,7 @@ But fear not! If I can overcome my fear of building circuits and trying to recal
 For this project, the DHT11 sensor caught my attention. Living in an apartment where I stubbornly refuse to open the door that provides ventilation and solely rely on the AC, I got curious about the humidity levels in my apartment throughout the year. I decided to log this data before investing in a dehumidifier.
 
 Here's what the DHT11 Sensor looks like (it came with my Arduino Uno R3 kit):
-<img src="assets/images/dht11.JPG" alt="Temperature and Humidity Sensor" width="500" height="300">
+<img src="../../assets/images/dht11.JPG" alt="Temperature and Humidity Sensor" width="500" height="300">
 
 This sensor is capable of taking temperature and humidity readings. There's a great library by Adafruit that makes it easy to interface with the sensor on an Arduino, along with sample code for quick setup. Check out the [Adafruit Library here](https://github.com/adafruit/DHT-sensor-library).
 
@@ -82,7 +82,7 @@ There are some improvements that can be made to this code, like the following:
 
 However, I wanted to put together something quickly since I was interested in taking the readings :)
 
-See some of the [source]() for some ideas.
+See some of the [source](https://github.com/a9mansoo/Arduino/tree/main/Humidity_Temperature_Sensor_DHT11/app/monitors/monitors) for some ideas.
 
 ## The Docker
 
@@ -104,5 +104,5 @@ Now that everything has come together, the data reading from the Arduino by WSL2
 
 Navigating on InfluxDB2 UI, I received the following graph after taking readings for around 30 minutes:
 
-<img src="assets/images/data.png" alt="Temperature and Humidity Influx Data">
+<img src="../../assets/images/data.png" alt="Temperature and Humidity Influx Data">
 
