@@ -26,13 +26,23 @@ This setup allows the Arduino to read temperature and humidity data from the sen
 
 ### Circuit Setup Image
 
-(<i>Coming Soon!</i>) 
+The following image shows the circuit created using the breadboard and Arduino (ignore Donald Duck in the background looking at it with disdain!)
+
+<img src="../assets/images/circuit.jpg" alt="Circuit" width="500" height="300">
+
+    1. The green wire is the data wire, which is attached to D2.
+    2. The red wire is the power, connected to the 5V pin of the Arduino.
+    3. The black wire is ground, connected to the GND pin of the Arduino.
 
 ### The Arduino Code
 
 This can be reviewed from the following [source](https://github.com/a9mansoo/Arduino/blob/main/Humidity_Temperature_Sensor_DHT11/humidity_temp_sensor.ino).
 
 Pretty simple, import the library and establish what kind of data has to be sent over serial communication (in our case, JSON).
+
+See the 'JSON' output below through serial output:
+
+<img src="../assets/images/arduino_output.png" alt="Arduino Output">
 
 ## The Python
 
@@ -80,9 +90,13 @@ There are some improvements that can be made to this code, like the following:
 
 ... and the list could go on and on for a self critic like myself :)
 
-However, I wanted to put together something quickly since I was interested in taking the readings :)
+However, I wanted to put together something quickly since I was interested in taking the readings :) And below we achieved the following (hurray!):
+
+<img src="../assets/images/python_data_logging.png" alt="Sensor File Output">
 
 See some of the [source](https://github.com/a9mansoo/Arduino/tree/main/Humidity_Temperature_Sensor_DHT11/app/monitors/monitors) for some ideas.
+
+### 
 
 ## The Docker
 
