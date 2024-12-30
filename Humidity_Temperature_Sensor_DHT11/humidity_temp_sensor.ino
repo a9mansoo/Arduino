@@ -15,10 +15,7 @@ void loop() {
   float humidity = dht.readHumidity();
   float temp = dht.readTemperature();
 
-  Serial.print("Humidity: ");
-  Serial.print(humidity);
-  Serial.print("%\t");
-  Serial.print("Temperature: ");
-  Serial.print(temp);
-  Serial.println("*C");
+  String response = "{\"humidity\": " + String(humidity, 2) + ", \"temperature\": " + String(temp, 2) + "}";
+
+  Serial.println(response);
 }
