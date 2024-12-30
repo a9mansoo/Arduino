@@ -44,6 +44,7 @@ class SerialConnection(Thread):
                 continue
             try:
                 read_data = self.conn.read(self.msg_size).decode().strip()
+                print(f"Serial Output Read: {read_data}")
                 buffer += read_data
                 if buffer.endswith("}") and buffer.startswith("{"):
                     data = buffer

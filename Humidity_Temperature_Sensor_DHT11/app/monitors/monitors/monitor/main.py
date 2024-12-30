@@ -28,15 +28,16 @@ def retry_connection(int_attempts=10):
     return bol_connected
 
 
+def log_data(obj_log):
+    print(f"Logging Data: {obj_log}")
+    rootLogger.info(obj_log)
+    file_handler.flush()
+
+
 def main():
+    arduino.register_log_callback(log_data)
     arduino.start_conn()
     while True:
         if not retry_connection():
             time.sleep(30)
-        else:
-            resp = arduino.LastResponse 
-            if resp != "":
-                print(f"LastResponse: {resp}")
-                rootLogger.info(resp)
-                file_handler.flush()
-            time.sleep(0.2)
+        time.sleep(1)
