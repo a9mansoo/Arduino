@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Temperature and Humidity Sensor - Faux Engineer</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Faux Engineer</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Faux Engineer</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../about/" class="nav-link">About Me</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Projects</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Temperature and Humidity Sensor</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../about/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#temperature-and-humidity-sensor" class="nav-link">Temperature and Humidity Sensor</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#the-circuit" class="nav-link">The Circuit</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#the-python" class="nav-link">The Python</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#the-docker" class="nav-link">The Docker</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#the-graph" class="nav-link">The Graph</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="temperature-and-humidity-sensor">Temperature and Humidity Sensor</h1>
+<h2 id="the-circuit">The Circuit</h2>
+<p>Oh boy! As someone who actively runs from physics, creating circuits was definitely a task I was dreading.</p>
+<p>But fear not! If I can overcome my fear of building circuits and trying to recall what resistance and capacitance are (flashbacks to high school physics!), anyone can do it!</p>
+<p>For this project, the DHT11 sensor caught my attention. Living in an apartment where I stubbornly refuse to open the door that provides ventilation and solely rely on the AC, I got curious about the humidity levels in my apartment throughout the year. I decided to log this data before investing in a dehumidifier.</p>
+<p>Here's what the DHT11 Sensor looks like (it came with my Arduino Uno R3 kit):
+<img src="/projects/assets/images/dht11.JPG" alt="Temperature and Humidity Sensor" width="500" height="300"></p>
+<p>This sensor is capable of taking temperature and humidity readings. There's a great library by Adafruit that makes it easy to interface with the sensor on an Arduino, along with sample code for quick setup. Check out the <a href="https://github.com/adafruit/DHT-sensor-library">Adafruit Library here</a>.</p>
+<h3 id="circuit-setup">Circuit Setup</h3>
+<p>Using a breadboard to create the circuit was surprisingly easy! I placed the sensor at the end of the board, and the connections were simple to make. Here's the basic wiring for the DHT11:</p>
+<pre><code>1. VCC connects to the 5V pin on the Arduino.
+2. GND connects to GND.
+3. The DATA pin goes to a digital pin on the Arduino (usually D2).
+</code></pre>
+<p>This setup allows the Arduino to read temperature and humidity data from the sensor, which we can then send to a computer or other devices.</p>
+<h3 id="circuit-setup-image">Circuit Setup Image</h3>
+<p>(<i>Coming Soon!</i>) </p>
+<h3 id="the-arduino-code">The Arduino Code</h3>
+<p>This can be reviewed from the following <a href="https://github.com/a9mansoo/Arduino/blob/main/Humidity_Temperature_Sensor_DHT11/humidity_temp_sensor.ino">source</a>.</p>
+<p>Pretty simple, import the library and establish what kind of data has to be sent over serial communication (in our case, JSON).</p>
+<h2 id="the-python">The Python</h2>
+<p>Before diving into the Python code, there was one important question on my mind:</p>
+<ul>
+<li>How will WSL2 or the Raspberry Pi (my prod/dev environment) communicate with the Arduino?</li>
+</ul>
+<p>The answer came from something both my workplaces had drilled into me: <b>Serial Communication</b>.</p>
+<p>The Arduino has a USB connector that allows it to communicate with the laptop or Raspberry Pi. Thanks to my previous experience, I already knew the library to use —<b>pySerial</b>— which made reading serial data a breeze. It's a great library for handling serial communication, and it worked flawlessly with the Arduino.</p>
+<p>But then another challenge arose: What if I unplug and replug the USB device? How could I ensure the same device file is always created in the Linux environments?</p>
+<p>This issue had been a concern at one of my previous workplaces, where we had simply accepted it as "just how things are, and we have a workaround." But at my new project, I found a simple solution: udev. By setting up udev rules, I was able to ensure the device file was consistently created every time the Arduino was connected, making my setup much more reliable (I added a symlink to /dev/arduino which would allow the serial connection client to always connect to the device). This rule file can be placed in <b>/etc/udev/rules.d/</b> and udev has to be reload.</p>
+<h3 id="udev-sample">Udev Sample</h3>
+<p>Here is a sample below based off the vendor and product ID based off of my device (note: I use 99 as the prefix so that it's part of the last rules that are evaluated). The product and vendor IDs can be found using dmesg or lsusb.:</p>
+<pre><code>SUBSYSTEM==&quot;tty&quot;, ATTRS{idVendor}==&quot;xxxx&quot;, ATTRS{idProduct}==&quot;xxxx&quot;, SYMLINK+=&quot;arduino&quot;
+</code></pre>
+<h3 id="wsl2-usb-quirk">WSL2 USB Quirk</h3>
+<p>For WSL2, there are some additional steps needed to read from the Arduino. See the following <a href="https://learn.microsoft.com/en-us/windows/wsl/connect-usb#install-the-usbipd-win-project">tutorial</a> for an easy solution to install.</p>
+<h3 id="python-code">Python Code</h3>
+<p>After setting up the following above on the dev/prod environment, it was time to do something I was somewhat comfortable with, writing Python! The following components are part of the python code:</p>
+<ul>
+<li>Serial Connection: Responsible for connecting to the device, reading from it and populating a queue.</li>
+<li>Arduino Monitor: Responsible for emptying out the queue and populating the last response.</li>
+<li>Main: The driver code that performs the logging and reading from the monitor.</li>
+</ul>
+<p>This code was packaged using setuptools and then is installed using pip. </p>
+<p>There are some improvements that can be made to this code, like the following:</p>
+<ul>
+<li>The timeout specified for reads</li>
+<li>Passing in the device</li>
+<li>More robust data validation</li>
+<li>File Rotation</li>
+</ul>
+<p>... and the list could go on and on for a self critic like myself :)</p>
+<p>However, I wanted to put together something quickly since I was interested in taking the readings :)</p>
+<p>See some of the <a href="">source</a> for some ideas.</p>
+<h2 id="the-docker">The Docker</h2>
+<p>Getting flashbacks from my previous workplace, we were somewhat obsessed with <b>InfluxDB</b> and <b>Telegraf</b>.</p>
+<p>Note that the code in the repository does not consist of environment files. These files contain sensitive information and therefore should be replaced by the user.</p>
+<h3 id="what-is-telegraf">What is Telegraf???</h3>
+<p>Telegraf is an agent that collects, processes, and sends metrics and events from a variety of sources. It's configured with inputs and outputs, and it comes with a plugin ecosystem that can be defined in a configuration file. In our case, the output would be InfluxDB and the input has been set to be a file in a shared volume between the monitor container and the Telegraf container to read from.</p>
+<h3 id="what-is-influxdb">What is InfluxDB???</h3>
+<p>Like any other database, InfluxDB is a time-series database optimized for storing and analyzing time-stamped data (metrics). The use case I am familiar with is collecting metrics. Surprisingly, InfluxDB2 comes with a builtin UI, perfect for looking at visualizations for our data (and no Grafana necessary)!</p>
+<h2 id="the-graph">The Graph</h2>
+<p>Now that everything has come together, the data reading from the Arduino by WSL2 using Python, Telegraf tailing our log file that's in a shared volume and InfluxDB configured to receive data, we're ready to see our graphs and data!</p>
+<p>Navigating on InfluxDB2 UI, I received the following graph after taking readings for around 30 minutes:</p>
+<p><img src="/projects/assets/images/data.png" alt="Temperature and Humidity Influx Data"></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
