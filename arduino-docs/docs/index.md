@@ -1,6 +1,6 @@
-# Faux Engineer
+# Arduino Projects
 
-Welcome to the adventures of a faux engineer and his Arduino Uno!
+Welcome to working with an Arduino Uno R3!
 
 This project encompasses:
 
@@ -8,4 +8,3 @@ This project encompasses:
 - Aggregating data from sensors
 - Thinking of ways to use the Arduino board
 
-I begged my sister to buy it for me so I could continue my dream of being a faux engineer.
