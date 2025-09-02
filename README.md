@@ -1,6 +1,5 @@
 # Arduino
-Testing different circuits with Arduino UNO + Raspberry Pi and serial connection
-
+Visualizing with Grafana, InfluxDB and Telegraf using real time system measurements from Arduino UNO3
 
 # Docs:
 
